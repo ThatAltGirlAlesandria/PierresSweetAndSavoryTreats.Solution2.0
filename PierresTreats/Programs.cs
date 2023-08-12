@@ -21,11 +21,9 @@ namespace PierresTreats
                           )
                         )
                       );
-
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                       .AddEntityFrameworkStores<PierresTreatsContext>()
                       .AddDefaultTokenProviders();
-
       builder.Services.Configure<IdentityOptions>(options =>
       {
         options.Password.RequireDigit = false;
@@ -35,21 +33,16 @@ namespace PierresTreats
         options.Password.RequiredLength = 0;
         options.Password.RequiredUniqueChars = 0;
       });
-
-
       WebApplication app = builder.Build();
+      
       app.UseHttpsRedirection();
       app.UseStaticFiles();
-
       app.UseRouting();
-
       app.UseAuthentication(); 
       app.UseAuthorization();
-
       app.MapControllerRoute(
           name: "default",
           pattern: "{controller=Home}/{action=Index}/{id?}");
-
       app.Run();
     }
   }
