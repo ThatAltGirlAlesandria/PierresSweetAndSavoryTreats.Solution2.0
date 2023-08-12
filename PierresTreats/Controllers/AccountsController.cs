@@ -59,5 +59,34 @@ namespace PierresTreats.Controllers
     {
       return View();
     }
+
+    [HttpPost]
+    public async Task<ActionResult> Login(LoginViewModels model)
+    {
+      if (!ModelState.IsValid)
+      {
+        return View(model);
+      }
+      else
+      {
+        Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+        
+        if (result.Succeeded)
+        {
+          return RedirectToAction("Index", "Home");
+        }
+        else
+        {
+          ModelState.AddModelError("", "Your username and password don't match. Please try again.");
+          return View(model);
+        }
+      }
+    }
+    [HttpPost]
+    public async Task<ActionResult> LogOff()
+    {
+      await _signInManager.SignOutAsync();
+      return RedirectToAction("Index");
+    }
   }
 }
