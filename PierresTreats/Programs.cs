@@ -33,6 +33,7 @@ namespace PierresTreats
         options.Password.RequiredLength = 0;
         options.Password.RequiredUniqueChars = 0;
       });
+      
       WebApplication app = builder.Build();
       
       app.UseHttpsRedirection();
