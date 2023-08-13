@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+@model RegisterViewModel
+@if(!ViewData.ModelState.IsValid)
+{
+  @Html.ValidationSummary("Please double check your information.")
+  @Html.ActionLink("Register", "Register", "Account", null, new { })
+}
+else
+{
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    @Html.LabelFor(user => user.Email, new { })
+    @Html.TextBoxFor(user => user.Email, new {  @required = "required" })
+    @Html.LabelFor(user => user.Password, new { })
+    @Html.PasswordFor(user => user.Password, new {, @required = "required" })
+    <input type="submit" value="Register" required/>
+  }
+}

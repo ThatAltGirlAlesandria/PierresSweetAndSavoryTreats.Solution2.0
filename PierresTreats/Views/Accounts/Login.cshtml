@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+@model LoginViewModel
+@if(!ViewData.ModelState.IsValid)
+{
+  @Html.ValidationSummary("Please double check your infromation.")
+}
+else
+{
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(m => m.Email, new { })
+    @Html.TextBoxFor(m => m.Email, new { })
+    @Html.LabelFor(m => m.Password, new { })
+    @Html.TextBoxFor(m => m.Password, new { })
+    <input type="submit" value="Login">
+  }
+}
