@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+<p>Let's making some changes</p>
+
+@Html.DisplayNameFor(m => m.FlavorType): @Html.DisplayFor(m => m.FlavorType)
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(m => m.FlavorId)
+  @Html.LabelFor(m => m.FlavorType)
+  @Html.EditorFor(m => m.FlavorType)
+  @Html.LabelFor(m => m.FlavorDescription)
+  @Html.EditorFor(m => m.FlavorDescription)
+  <input type="submit" value="Save" />
+}
+@Html.ActionLink("List of Flavors", "Index")
+@Html.ActionLink("List of Treats", "Index", "Treats")
