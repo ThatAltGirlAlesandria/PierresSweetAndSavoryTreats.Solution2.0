@@ -1,15 +1,15 @@
-using System.Collection.Generic;
-using System.Component.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace PierresTreats.Models;
+namespace PierresTreats.Models
 {
   public class Flavor
   {
-    public Application User { get; set; }
     public int FlavorId { get; set; }
-    [Required(ErrorMessage = "This field cannot be")]
-    public List<FlavoredTreat> joinEntities { get; }
-    public string FlavorDetails { get; set; }
-    public string FlavorName { get; set; }
+    [Required(ErrorMessage = "Please fill in the fields below.")]
+    public string FlavorType { get; set; }
+    public string FlavorDescription { get; set; }
+    public List<FlavorTreat> JoinEntities { get; }
+    public ApplicationUser User { get; set; }
   }
 }

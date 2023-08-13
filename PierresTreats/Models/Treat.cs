@@ -1,16 +1,16 @@
-using System.Collection.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PierresTreats.Models
 {
   public class Treat
   {
-    public ApplicationUser User { get; set; }
-    [Required(ErrorMessage = "This field cannot be")]
     public int TreatId { get; set; }
-    public int TreatCount { get; set; }
-    public List<FlavoredTreat> joinEntities { get; }
-    public string TreatDetails { get; set; }
+    [Required(ErrorMessage = "Please fill in the fields below.")]
     public string TreatName { get; set; }
+    public string TreatDescription { get; set; }
+    public int TreatQuantity { get; set; }
+    public List<FlavorTreat> JoinEntities { get; }
+    public ApplicationUser User { get; set; }
   }
 }
