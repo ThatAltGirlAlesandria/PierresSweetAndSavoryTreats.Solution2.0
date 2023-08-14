@@ -7,11 +7,11 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  @Html.ActionLink("List of Treats", "Index", "Treats")
-  @Html.ActionLink("List of Flavors", "Index", "Flavors")
+  @Html.ActionLink("List of Treats", " ", "Index", " ", "Treats")
+  @Html.ActionLink("List of Flavors", " ", "Index", " ", "Flavors")
 }
 else
 {
-  <p>Login to your account @Html.ActionLink("here", "Login", "Account")</p>
-  <p>If you don't have an account, please register here @Html.ActionLink("here", "Register", "Account")</p>
+  <p>Login to your account @Html.ActionLink("here", " ", "Login", " ", "Account")</p>
+  <p>If you don't have an account, please register here @Html.ActionLink("here", " ", "Register", " ", "Account")</p>
 }
