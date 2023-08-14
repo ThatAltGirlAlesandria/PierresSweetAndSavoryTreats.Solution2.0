@@ -39,7 +39,7 @@ namespace PierresTreats.Controllers
       else
       {
         ApplicationUser user = new ApplicationUser {UserName = model.Email};
-        IdentityResult = await _userManager.CreateAsync(user, model.Password);
+        IdentityResult result = await _userManager.CreateAsync(user, model.Password);
       
         if (result.Succeeded)
         {
@@ -61,7 +61,7 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Login(LoginViewModels model)
+    public async Task<ActionResult> Login(LoginViewModel model)
     {
       if (!ModelState.IsValid)
       {
