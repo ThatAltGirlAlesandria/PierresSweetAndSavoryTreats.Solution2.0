@@ -93,7 +93,7 @@ $ dotnet watch run
 
 ## Known Bugs
 
-* Cannot get past the splash page.
+* No known bugs
 
 ## License
 
