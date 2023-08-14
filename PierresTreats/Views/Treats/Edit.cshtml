@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+<p>Edit a Treat</p>
+
+@Html.DisplayNameFor(m => m.TreatName): @Html.DisplayFor(m => m.TreatName)
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(m => m.TreatId)
+  @Html.LabelFor(m => m.TreatName)
+  @Html.EditorFor(m => m.TreatName)
+  @Html.LabelFor(m => m.TreatDescription)
+  @Html.EditorFor(m => m.TreatDescription)
+  @Html.LabelFor(m => m.TreatQuantity)
+  <select name="TreatQuantity">
+    @for (int i = 1; i <= 10; i++)
+    {
+      <option value = "@i">@i</option>
+    }
+  </select>
+  <input type="submit" value="Save" />
+}
+@Html.ActionLink("List of Treats", "Index")
+@Html.ActionLink("List of Flavors", "Index", "Flavors")

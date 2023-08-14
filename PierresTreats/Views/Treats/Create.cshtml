@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+<h1>Add a Treat:</h1>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.TreatName, new { })
+  @Html.TextBoxFor(m => m.TreatName, new { @required = "required"})
+  @Html.LabelFor(m => m.TreatDescription, new { })
+  @Html.TextBoxFor(m => m.TreatDescription, new { @required = "required"})
+  @Html.LabelFor(m => m.TreatQuantity, new { })
+  <select name="TreatQuantity">
+    @for (int i = 1; i <= 10; i++)
+    {
+      <option value = "@i">@i</option>
+    }
+  </select>
+  <input type="submit" value="Add Flavor">
+}
