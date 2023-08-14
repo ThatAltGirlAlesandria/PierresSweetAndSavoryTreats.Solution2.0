@@ -15,5 +15,6 @@
   @Html.EditorFor(m => m.FlavorDescription)
   <input type="submit" value="Save" />
 }
-@Html.ActionLink("List of Flavors", " ", "Index")
-@Html.ActionLink("List of Treats", " ", "Index", " ", "Treats")
+@Html.ActionLink("List of Flavors", "Index")
+<br>
+@Html.ActionLink("List of Treats", "Index", "Treats")

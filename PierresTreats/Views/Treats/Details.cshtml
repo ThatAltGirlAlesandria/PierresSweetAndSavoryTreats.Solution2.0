@@ -28,8 +28,12 @@ else
     }
   </ul>
 }
-@Html.ActionLink("Edit Treat", " ", "Edit", new { id = Model.TreatId })
-@Html.ActionLink("Delete Treat", " ", "Delete", new { id = Model.TreatId })
-@Html.ActionLink("Add Treat to Flavor", " ", "AddFlavor", new { id = Model.TreatId })
-@Html.ActionLink("List of Treats", " ", "Index")
-@Html.ActionLink("List of Flavors", " ", "Index", " ", "Flavors")
+@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })
+<br>
+@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })
+<br>
+@Html.ActionLink("Add Treat to Flavor", "AddFlavor", new { id = Model.TreatId })
+<br>
+@Html.ActionLink("List of Treats", "Index")
+<br>
+@Html.ActionLink("List of Flavors", "Index", "Flavors")
