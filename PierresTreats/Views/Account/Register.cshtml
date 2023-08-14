@@ -4,19 +4,22 @@
 
 @using PierresTreats.ViewModels
 @model RegisterViewModel
+
+<h1>Create an account</h1>
+
 @if(!ViewData.ModelState.IsValid)
 {
   @Html.ValidationSummary("Please double check your information.")
-  @Html.ActionLink("Register", "Register", "Account", null, new { })
+  //@Html.ActionLink("Register", "Register", "Account", null, new { })
 }
 else
 {
   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
   {
-    @Html.LabelFor(user => user.Email, new { })
-    @Html.TextBoxFor(user => user.Email, new {  @required = "required" })
-    @Html.LabelFor(user => user.Password, new { })
-    @Html.TextBoxFor(user => user.Password, new { @required = "required" })
+    @Html.LabelFor(user => user.Email)
+    @Html.TextBoxFor(user => user.Email)
+    @Html.LabelFor(user => user.Password)
+    @Html.TextBoxFor(user => user.Password)
     <input type="submit" value="Register" required/>
   }
 }
